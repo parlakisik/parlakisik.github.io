@@ -1,0 +1,43 @@
+{
+  "name": "parlakisik-website",
+  "version": "1.0.0",
+  "description": "Personal website for Parlak Isik",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "start-node": "npx http-server -p 8000 -o",
+    "test": "npm run test:html && npm run test:css && npm run test:js && npm run test:accessibility",
+    "test:html": "npx html-validate index.html",
+    "test:css": "npx stylelint styles.css",
+    "test:js": "npx eslint script.js",
+    "test:accessibility": "npx pa11y http://localhost:8000",
+    "test:performance": "npx lighthouse http://localhost:8000 --output html --output-path ./lighthouse-report.html",
+    "test:all": "npm run test && npm run test:performance",
+    "dev": "npm run start",
+    "build": "echo 'No build step needed for static site'",
+    "deploy": "git add . && git commit -m 'Deploy website updates' && git push origin main"
+  },
+  "keywords": [
+    "personal-website",
+    "portfolio",
+    "github-pages",
+    "static-site"
+  ],
+  "author": "Parlakisik",
+  "license": "MIT",
+  "devDependencies": {
+    "html-validate": "^8.7.4",
+    "stylelint": "^16.0.2",
+    "stylelint-config-standard": "^36.0.0",
+    "eslint": "^8.55.0",
+    "eslint-config-standard": "^17.1.0",
+    "pa11y": "^7.0.0",
+    "lighthouse": "^11.4.0",
+    "http-server": "^14.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parlakisik/parlakisik.github.io.git"
+  },
+  "homepage": "https://www.parlakisik.com"
+}
