@@ -46,13 +46,17 @@ body {
 .nav-logo a {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #2563eb;
+    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 50%, #10b981 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .nav-logo a:hover {
-    color: #1d4ed8;
+    transform: scale(1.05);
+    filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.3));
 }
 
 .nav-menu {
@@ -69,7 +73,7 @@ body {
 }
 
 .nav-link:hover {
-    color: #2563eb;
+    color: #3b82f6;
 }
 
 .nav-link::after {
@@ -79,7 +83,7 @@ body {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: #2563eb;
+    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 50%, #10b981 100%);
     transition: width 0.3s ease;
 }
 
@@ -106,7 +110,7 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #475569 75%, #64748b 100%);
     color: white;
     position: relative;
     overflow: hidden;
@@ -119,8 +123,22 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-    opacity: 0.3;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+    opacity: 0.6;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+    opacity: 0.4;
 }
 
 .hero-container {
@@ -143,7 +161,8 @@ body {
 }
 
 .highlight {
-    color: #fbbf24;
+    color: #06b6d4;
+    text-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
 }
 
 .hero-subtitle {
@@ -178,34 +197,40 @@ body {
 }
 
 .btn-primary {
-    background-color: #fbbf24;
-    color: #1f2937;
+    background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
 }
 
 .btn-primary:hover {
-    background-color: #f59e0b;
+    background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
     transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(6, 182, 212, 0.4);
 }
 
 .btn-secondary {
     background-color: transparent;
     color: white;
-    border: 2px solid white;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
 }
 
 .btn-secondary:hover {
-    background-color: white;
-    color: #1f2937;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-color: white;
     transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
 }
 
 .profile-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
     border-radius: 20px;
     padding: 2rem;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .profile-image {
@@ -214,7 +239,9 @@ body {
 
 .profile-image i {
     font-size: 4rem;
-    color: #fbbf24;
+    color: #06b6d4;
+    text-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
+    filter: drop-shadow(0 4px 8px rgba(6, 182, 212, 0.3));
 }
 
 .profile-info h3 {
@@ -247,9 +274,10 @@ body {
 }
 
 .social-links a:hover {
-    background: #fbbf24;
-    color: #1f2937;
+    background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+    color: white;
     transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.4);
 }
 
 /* Section Styles */
@@ -274,8 +302,9 @@ section {
     transform: translateX(-50%);
     width: 60px;
     height: 4px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 50%, #10b981 100%);
     border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
 }
 
 /* About Section */
@@ -357,12 +386,19 @@ section {
 }
 
 .skill-tag {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 50%, #10b981 100%);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 500;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
 }
 
 /* Projects Section */
@@ -393,7 +429,9 @@ section {
 
 .project-image i {
     font-size: 3rem;
-    color: #2563eb;
+    color: #3b82f6;
+    text-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+    filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.2));
 }
 
 .project-content h3 {
@@ -440,7 +478,7 @@ section {
 }
 
 .project-link:hover {
-    color: #1d4ed8;
+    color: #3b82f6;
 }
 
 /* Blog Section */
@@ -468,14 +506,30 @@ section {
 }
 
 .blog-image {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 50%, #10b981 100%);
     padding: 2rem;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
 }
 
 .blog-image i {
     font-size: 2.5rem;
     color: white;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    position: relative;
+    z-index: 1;
 }
 
 .blog-content {
@@ -521,7 +575,7 @@ section {
 }
 
 .read-more:hover {
-    color: #1d4ed8;
+    color: #3b82f6;
 }
 
 /* Contact Section */
@@ -558,8 +612,9 @@ section {
 
 .contact-method i {
     font-size: 1.5rem;
-    color: #2563eb;
+    color: #3b82f6;
     width: 30px;
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
 }
 
 .contact-method h4 {
@@ -598,7 +653,8 @@ section {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #2563eb;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 .form-group textarea {
@@ -638,8 +694,9 @@ section {
 }
 
 .footer-social a:hover {
-    background: #2563eb;
+    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 50%, #10b981 100%);
     transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
 }
 
 /* Responsive Design */
